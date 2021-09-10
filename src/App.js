@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import Coins from "./components/Coins";
-import CoinShow from "./components/CoinShow";
 
 
 function App() {
@@ -30,7 +29,6 @@ function App() {
   return (
     <>
       <Coins koins={koins} />
-      <CoinShow koins={koins} />
     </>
   );
 }

@@ -1,5 +1,5 @@
 
-const CoinShow = ({ koins }) => {
+const CoinShow = ({ koins, name, price, cap, low, high, circulating, total, rank }) => {
 
     return (
         <div className='show'>
@@ -7,29 +7,29 @@ const CoinShow = ({ koins }) => {
             <div className='info'>
                 <div className='title'>
                     <h4>
-                        selected coin title
+                        { name }
                     </h4>
                 </div>
                 <p>
-                    CURRENT PRICE: 
+                    CURRENT PRICE: ${ price }
                 </p>
                 <p>
-                    MARKET CAP: 
+                    MARKET CAP: { cap }
                 </p>
                 <p>
-                    LOW 24H: 
+                    LOW 24H: { low }
                 </p>
                 <p>
-                    HIGH 24H: 
+                    HIGH 24H: { high }
                 </p>
                 <p>
-                CIRCULATING SUPPLY: 
+                    CIRCULATING SUPPLY: { circulating } 
                 </p>
                 <p>
-                    TOTAL SUPPLY: 
+                    TOTAL SUPPLY: { total }
                 </p>
                 <p>
-                    MARKET CAP RANK: 
+                    MARKET CAP RANK: { rank }
                 </p>
                 <div className='favourite'>
                     <button>

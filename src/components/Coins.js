@@ -1,61 +1,69 @@
 import { useState } from "react";
+import CoinShow from "./CoinShow";
 
 const Coins = ({ koins }) => {
 
     const [ selected, setSelected ] = useState([]);
 
-    const Clicked = (e) => {
-        e.preventDefault();
+    const rowClicked = (coin) => {
+        
+        setSelected(coin);
+    };
 
-        const id = e.currentTarget.getAttribute('id')
-        console.log('hi', id)
-
-        setSelected()
-
-        console.log(selected)
-    }
-
+    if (!koins) return <p> Loading... </p>
 
     return ( 
-       <table>
-           <thead>
-               <tr>
-                   <th>
-                       Name
-                   </th>
-                   <th>
-                       Total Supply
-                   </th>
-                   <th>
-                       Market Cap
-                   </th>
-                   <th>
-                       Current Price
-                   </th>
-               </tr>
-           </thead>
-           <tbody>
-                { koins.map((coin, key) => {
-                    return (
-                        <tr key={key} onClick={Clicked}>
-                            <td>
-                                {coin.id}
-                            </td>
-                            <td>
-                                { coin.total_supply || 'insert value' }
-                            </td>
-                            <td>
-                                { coin.market_cap || 'insert value' }
-                            </td>
-                            <td>
-                                { coin.current_price || 'insert value' }
-                            </td>
-                        </tr>
-                    );
-                }) 
-                }
-           </tbody>
-       </table>
+    <>
+        <table>
+            <thead>
+                <tr>
+                    <th>
+                        Name
+                    </th>
+                    <th>
+                        Total Supply
+                    </th>
+                    <th>
+                        Market Cap
+                    </th>
+                    <th>
+                        Current Price
+                    </th>
+                </tr>
+            </thead>
+            <tbody>
+                    { koins.map((coin) => {
+                        return (
+                            <tr key={coin.id} id={coin.id} onClick={() => {rowClicked(coin)}}>
+                                <td id={coin.id}>
+                                    {coin.id}
+                                </td>
+                                <td id={coin.id}>
+                                    { coin.total_supply || 'insert value' }
+                                </td>
+                                <td id={coin.id}>
+                                    { coin.market_cap || 'insert value' }
+                                </td>
+                                <td id={coin.id}>
+                                    { coin.current_price || 'insert value' }
+                                </td>
+                            </tr>
+                        );
+                    }) 
+                    }
+            </tbody>
+        </table>
+        <CoinShow 
+            name={selected.name}
+            price={selected.current_price}
+            cap={selected.market_cap}
+            low={selected.low_24h}
+            high={selected.high_24h}
+            circulating={selected.circulating_supply}
+            total={selected.total_supply}
+            rank={selected.market_cap_rank} 
+        />
+    </>
     );
 }
 
