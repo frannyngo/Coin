@@ -1,7 +1,7 @@
 import { useState } from "react";
 import CoinShow from "./CoinShow";
 
-const Coins = ({ koins }) => {
+const Coins = ({ koins, setFavourite, favourite }) => {
 
     const [ selected, setSelected ] = useState([]);
 
@@ -62,6 +62,8 @@ const Coins = ({ koins }) => {
             circulating={selected.circulating_supply}
             total={selected.total_supply}
             rank={selected.market_cap_rank} 
+            setFavourite={setFavourite}
+            favourite={favourite}
         />
     </>
     );

@@ -1,5 +1,10 @@
 
-const CoinShow = ({ koins, name, price, cap, low, high, circulating, total, rank }) => {
+const CoinShow = ({ favourite, setFavourite, koins, name, price, cap, low, high, circulating, total, rank }) => {
+
+    const Add = (e) => {
+        e.preventDefault();
+        setFavourite([...favourite, name])
+    }
 
     return (
         <div className='show'>
@@ -32,7 +37,7 @@ const CoinShow = ({ koins, name, price, cap, low, high, circulating, total, rank
                     MARKET CAP RANK: { rank }
                 </p>
                 <div className='favourite'>
-                    <button>
+                    <button onClick={Add}>
                         add to favourite
                     </button>
                 </div>

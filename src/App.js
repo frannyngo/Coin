@@ -1,11 +1,13 @@
 import { useState, useEffect } from "react";
 import axios from 'axios';
 import Coins from "./components/Coins";
+import Favourites from "./components/Favourites";
 
 
 function App() {
 
   const [ coins, setCoins ] = useState([]);
+  const [ favourite, setFavourite ] = useState([]);
 
   const koins = coins.filter((c) => {
       if (c.id === 'bitcoin' ||  c.id === 'ethereum' ||  c.id === 'ripple' ||  c.id === 'bitcoin-cash'  || c.id === 'litecoin') {
@@ -28,7 +30,8 @@ function App() {
 
   return (
     <>
-      <Coins koins={koins} />
+      <Favourites favourite={favourite} setFavourite={setFavourite} />
+      <Coins koins={koins} favourite={favourite} setFavourite={setFavourite} />
     </>
   );
 }
