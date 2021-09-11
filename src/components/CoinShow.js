@@ -82,7 +82,7 @@ const CoinShow = ({ favourite, setFavourite, symbol,  koins, name, price, cap, l
                 <div className='info'>
                     <div className='title'>
                         <h4>
-                            { name }
+                            { `${name} (${symbol})` }
                         </h4>
                     </div>
                     <p>
@@ -107,9 +107,9 @@ const CoinShow = ({ favourite, setFavourite, symbol,  koins, name, price, cap, l
                         MARKET CAP RANK: { rank }
                     </p>
                     <div className='favourite'>
-                        <button onClick={Add}>
+                        <small onClick={Add}>
                             add to favourite
-                        </button>
+                        </small>
                     </div>
                 </div>
 
@@ -118,12 +118,14 @@ const CoinShow = ({ favourite, setFavourite, symbol,  koins, name, price, cap, l
                         <button onClick={Buy}>
                             BUY
                         </button>
+                        &emsp;
                         <button onClick={Sell}>
                             SELL
                         </button>
                     </div>
                     <div className='selector'>
                         <select value={selectCurrency} onChange={HandleChange}>
+                            <option disabled selected> Select Trade Currency </option>
                         {   
                         koins.map((coin) => {
                             return (
@@ -136,7 +138,8 @@ const CoinShow = ({ favourite, setFavourite, symbol,  koins, name, price, cap, l
                         })
                         }
                         </select>
-                        <select value={amount} onChange={HandleAmount}>
+                        <select className='bottomSelector' value={amount} onChange={HandleAmount}>
+                            <option disabled selected> Amount </option>
                             {
                                 numbers.map((num) => {
                                     return (
@@ -151,14 +154,16 @@ const CoinShow = ({ favourite, setFavourite, symbol,  koins, name, price, cap, l
                         </select>
                     </div>
                     <div className='formButton'>
-                        <button onClick={Submit}>
-                            SUBMIT
-                        </button>
+                        <div>
+                            <button onClick={Submit}>
+                                SUBMIT
+                            </button>
+                        </div>
+                        <div className='receipt'>
+                            {receipt}
+                        </div>
                     </div>
                 </form>
-                <div className='receipt'>
-                        {receipt}
-                </div>
             </>
             :
             <p>

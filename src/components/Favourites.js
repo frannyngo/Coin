@@ -8,31 +8,30 @@ const Favourites = ({ favourite, setFavourite }) => {
 
         setFavourite(delet);
     }
-
+console.log(favourite)
     return (
-        <>
+        <div className='head'>
             <h3>
                 Favourite Coins
             </h3>
 
-                { 
-                    !favourite? 
-                        <small>
-                            'No Favourite Coins Added Yet'
-                        </small>
-                    :
+                { favourite.length === 0? 
+                    <small>
+                        No Favourite Coins Added Yet
+                    </small>
+                :
 
-                        favourite.map((f) => {
-                            return (
-                                <button key={f} id={f} 
-                                    onClick={() => Remove(f)}
-                                    >
-                                    { f }
-                                </button>
-                            )
-                        })
-                }
-        </>
+                favourite.map((f) => {
+                    return (
+                        <button className='faveButtons' data-text='REMOVE' key={f} id={f} 
+                            onClick={() => Remove(f)}
+                        >
+                            { f }
+                        </button>
+                    )
+                })
+            }
+        </div>
     );
 }
 

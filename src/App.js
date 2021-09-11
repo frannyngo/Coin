@@ -3,7 +3,6 @@ import axios from 'axios';
 import Coins from "./components/Coins";
 import Favourites from "./components/Favourites";
 
-
 function App() {
 
   const [ coins, setCoins ] = useState([]);

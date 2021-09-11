@@ -13,7 +13,13 @@ const Coins = ({ koins, setFavourite, favourite }) => {
     if (!koins) return <p> Loading... </p>
 
     return ( 
-    <>
+    <div className='coinTable'> 
+    <div>
+        <div className='topOfTable'>
+            <h4>
+                ALL COINS
+            </h4>
+        </div>
         <table>
             <thead>
                 <tr>
@@ -53,7 +59,14 @@ const Coins = ({ koins, setFavourite, favourite }) => {
                     }
             </tbody>
         </table>
-        <CoinShow 
+        { !selected?
+            <div className='bottomOfTable'>
+                <p>
+                    Select a coin to view more information
+                </p>
+            </div>
+        :
+            <CoinShow 
             name={selected.name}
             price={selected.current_price}
             cap={selected.market_cap}
@@ -66,8 +79,11 @@ const Coins = ({ koins, setFavourite, favourite }) => {
             setFavourite={setFavourite}
             favourite={favourite}
             koins={koins}
-        />
-    </>
+            />
+        }
+        
+    </div>
+    </div>
     );
 }
 
