@@ -1,4 +1,14 @@
+import { useState } from 'react';
+
+import Bitcoin from './img/Bitcoin.png';
+import BitcoinCash from './img/BitcoinCash.png';
+import Ethereum from './img/Ethereum.png';
+import Litecoin from './img/Litecoin.png';
+import XRP from './img/XRP.png';
+
 const Favourites = ({ favourite, setFavourite }) => {
+    
+    const imageReference = { 'Bitcoin': Bitcoin, 'Bitcoin Cash': BitcoinCash, 'Ethereum': Ethereum, 'XRP': XRP, 'Litecoin': Litecoin }
 
     const Remove = (f) => {
 
@@ -8,6 +18,7 @@ const Favourites = ({ favourite, setFavourite }) => {
 
         setFavourite(delet);
     }
+
 console.log(favourite)
     return (
         <div className='head'>
@@ -23,10 +34,16 @@ console.log(favourite)
 
                 favourite.map((f) => {
                     return (
-                        <button className='faveButtons' data-text='REMOVE' key={f} id={f} 
+                        <button className='faveButtons' 
+                            data-text='REMOVE' 
+                            key={f} id={f} 
                             onClick={() => Remove(f)}
-                        >
-                            { f }
+                                >
+                            <img src={imageReference[f]} 
+                                alt='hi' 
+                                className='logo'
+                                /> 
+                                { f }
                         </button>
                     )
                 })

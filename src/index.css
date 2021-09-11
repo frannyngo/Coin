@@ -143,6 +143,11 @@ select {
   align-items: center;
 }
 
+.logo {
+  height: 15px;
+  padding-top: 5px;
+}
+
 .formButton button {
   padding: 10px;
   margin-top: 20px;

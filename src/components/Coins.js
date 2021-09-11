@@ -79,6 +79,7 @@ const Coins = ({ koins, setFavourite, favourite }) => {
             setFavourite={setFavourite}
             favourite={favourite}
             koins={koins}
+            image={selected.image}
             />
         }
         

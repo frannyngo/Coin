@@ -1,6 +1,6 @@
 import { useState } from 'react'
 
-const CoinShow = ({ favourite, setFavourite, symbol,  koins, name, price, cap, low, high, circulating, total, rank }) => {
+const CoinShow = ({ favourite, setFavourite, image, symbol,  koins, name, price, cap, low, high, circulating, total, rank }) => {
 
     const [ buy, setBuy ] = useState();
     const [ sell, setSell ] = useState();
@@ -82,7 +82,7 @@ const CoinShow = ({ favourite, setFavourite, symbol,  koins, name, price, cap, l
                 <div className='info'>
                     <div className='title'>
                         <h4>
-                            { `${name} (${symbol})` }
+                            <img src={image} className='logo' alt='image'/> { `${name} (${symbol})` }
                         </h4>
                     </div>
                     <p>
@@ -108,7 +108,7 @@ const CoinShow = ({ favourite, setFavourite, symbol,  koins, name, price, cap, l
                     </p>
                     <div className='favourite'>
                         <small onClick={Add}>
-                            add to favourite
+                            + add to favourite
                         </small>
                     </div>
                 </div>

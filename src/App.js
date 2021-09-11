@@ -36,7 +36,7 @@ function App() {
     
   }, [])
 
-useEffect(() => {
+  useEffect(() => {
 
     localStorage.setItem('favourite', JSON.stringify(favourite))
 
