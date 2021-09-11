@@ -62,8 +62,10 @@ const Coins = ({ koins, setFavourite, favourite }) => {
             circulating={selected.circulating_supply}
             total={selected.total_supply}
             rank={selected.market_cap_rank} 
+            symbol={selected.symbol}
             setFavourite={setFavourite}
             favourite={favourite}
+            koins={koins}
         />
     </>
     );
