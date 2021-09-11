@@ -6,7 +6,11 @@ import Favourites from "./components/Favourites";
 function App() {
 
   const [ coins, setCoins ] = useState([]);
-  const [ favourite, setFavourite ] = useState([]);
+
+  const [ favourite, setFavourite ] = useState([], () => {
+    const localData = localStorage.getItem('favourite');
+    return localData? JSON.parse(localData) : [];
+  });
 
   const koins = coins.filter((c) => {
       if (c.id === 'bitcoin' ||  c.id === 'ethereum' ||  c.id === 'ripple' ||  c.id === 'bitcoin-cash'  || c.id === 'litecoin') {
@@ -24,6 +28,19 @@ function App() {
           });
 
   }, []);
+
+  useEffect(() => {
+
+    const storedFavourite = JSON.parse(localStorage.getItem('favourite'))
+    if (storedFavourite) setFavourite(storedFavourite)
+    
+  }, [])
+
+useEffect(() => {
+
+    localStorage.setItem('favourite', JSON.stringify(favourite))
+
+  }, [favourite]);
 
   if (!coins) return <p> Loading... </p>
 

@@ -84,6 +84,10 @@ td {
   color: rgb(56, 163, 250);
 }
 
+.favourite:hover {
+  cursor: pointer;
+}
+
 form {
   width: 250px;
   align-items: center;
