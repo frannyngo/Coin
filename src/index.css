@@ -82,7 +82,7 @@ td {
 
 .info {
   background: rgb(238, 238, 238);
-  width: 250px;  
+  width: 270px;  
   height: 320px;
   border: 2px solid rgb(238, 238, 238);
 }
@@ -109,7 +109,7 @@ td {
 }
 
 form {
-  width: 250px;
+  width: 270px;
   align-items: center;
   height: 320px;
   border: 2px solid rgb(238, 238, 238);
@@ -354,7 +354,6 @@ table:hover {
   
   table {
     border-collapse: collapse;
-    border: 2px solid rgb(240, 237, 237);
     width: 100%;
     height: 100%;
   }
