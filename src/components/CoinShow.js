@@ -7,6 +7,7 @@ const CoinShow = ({ favourite, setFavourite, image, symbol,  koins, name, price,
     const [ selectCurrency, setSelectCurrency ] = useState();
     const [ amount, setAmount ] = useState();
     const [ receipt, setReceipt ] = useState();
+    const [ info, setInfo ] = useState();
 
     const numbers = [];
 
@@ -39,11 +40,11 @@ const CoinShow = ({ favourite, setFavourite, image, symbol,  koins, name, price,
         e.preventDefault()
         
         const chosen = e.target.value
-        const info = koins.filter((coi) => {
+        setInfo(koins.filter((coi) => {
             return coi.name === chosen
-        });
+        }));
 
-        setSelectCurrency(info);
+        setSelectCurrency(chosen);
     };
 
     const Add = (e) => {
@@ -64,14 +65,14 @@ const CoinShow = ({ favourite, setFavourite, image, symbol,  koins, name, price,
         if (buy === true && sell === false) {
             let difference = 0
             
-            difference = (selectCurrency[0].current_price * amount) / price
+            difference = (info[0].current_price * amount) / price
             console.log(difference)
-            setReceipt(`You Have Purchased ${amount} ${selectCurrency[0].symbol} for ${difference} ${symbol}`);
+            setReceipt(`You Have Purchased ${amount} ${info[0].symbol} for ${difference} ${symbol}`);
         } else if (buy === false && sell === true) {
             let difference = 0
 
-            difference = (selectCurrency[0].current_price * amount) / price
-            setReceipt(`You Have Sold ${amount} ${selectCurrency[0].symbol} for ${difference} ${symbol}`);
+            difference = (info[0].current_price * amount) / price
+            setReceipt(`You Have Sold ${amount} ${info[0].symbol} for ${difference} ${symbol}`);
         }
     };
 

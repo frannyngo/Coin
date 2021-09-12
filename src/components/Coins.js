@@ -59,7 +59,7 @@ const Coins = ({ koins, setFavourite, favourite }) => {
                     }
             </tbody>
         </table>
-        { !selected?
+        { selected.length === 0 ?
             <div className='bottomOfTable'>
                 <p>
                     Select a coin to view more information

@@ -33,6 +33,7 @@ body {
 
 .coinTable .bottomOfTable {
   padding-top: 50px;
+  margin-bottom: 150px;
 }
 
 table {
@@ -198,7 +199,6 @@ select {
   text-transform: uppercase;
   font-size: 12px;
   margin-right: 10px;
-  transition: 0.3s;
 }
 
 .faveButtons:hover {
@@ -210,8 +210,15 @@ select {
 
 .faveButtons:hover:after {
   content: attr(data-hover);
-  font-size: 23px;
+  font-size: 12px;
   border: 1px solid transparent;
+  padding: 18px;
+  width: 160px;
+  margin-bottom: 30px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin-right: 10px;
+  line-height: 37.9px;
 }
 
 table:hover {
@@ -231,11 +238,10 @@ table:hover {
     text-transform: uppercase;
     font-size: 12px;
     margin-right: 10px;
-    transition: 0.3s;
   }
 }
 
-@media (max-width: 840px) {
+@media (max-width: 768px) {
   .faveButtons {
     background: orange;
     border: 1px solid white;
@@ -248,26 +254,30 @@ table:hover {
     text-transform: uppercase;
     font-size: 10px;
     margin-right: 10px;
-    transition: 0.3s;
   }
-}
 
-@media (max-width: 700px) {
-  .faveButtons {
-    background: orange;
-    border: 1px solid white;
-    color: white;
+  .faveButtons:hover {
+    font-size: 0;
+    background: rgba(10, 10, 10, 0.123);
+    border: 1px solid transparent;
+  }
+  
+  
+  .faveButtons:hover:after {
+    content: attr(data-hover);
+    font-size: 10px;
+    border: 1px solid transparent;
     padding: 5px;
-    width: 75px;
+    width: 100px;
     margin-top: 10px;
     margin-bottom: 30px;
     font-weight: bold;
     text-transform: uppercase;
-    font-size: 10px;
     margin-right: 10px;
-    transition: 0.3s;
+    line-height: 31.5px;
   }
 }
+
 
 @media (max-width: 375px) {
 
@@ -296,7 +306,22 @@ table:hover {
     text-transform: uppercase;
     font-size: 10px;
     margin-right: 10px;
-    transition: 0.3s;
+  }
+
+  .faveButtons:hover {
+    font-size: 0;
+    background: rgba(10, 10, 10, 0.123);
+    border: 1px solid transparent;
+  }
+  
+  
+  .faveButtons:hover:after {
+    content: attr(data-hover);
+    font-size: 8px;
+    border: 1px solid transparent;
+    font-weight: bold;
+    text-transform: uppercase;
+    line-height: 8.2px;
   }
 
 

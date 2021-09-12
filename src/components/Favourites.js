@@ -35,7 +35,7 @@ console.log(favourite)
                 favourite.map((f) => {
                     return (
                         <button className='faveButtons' 
-                            data-hover='REMOVE' 
+                            data-hover='remove' 
                             key={f} id={f} 
                             onClick={() => Remove(f)}
                                 >
