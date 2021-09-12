@@ -26,10 +26,10 @@ const Coins = ({ koins, setFavourite, favourite }) => {
                     <th>
                         Name
                     </th>
-                    <th>
+                    <th className='col1'>
                         Total Supply
                     </th>
-                    <th>
+                    <th className='col2'>
                         Market Cap
                     </th>
                     <th>
@@ -44,13 +44,13 @@ const Coins = ({ koins, setFavourite, favourite }) => {
                                 <td id={coin.id}>
                                     {coin.id}
                                 </td>
-                                <td id={coin.id}>
+                                <td id={coin.id} className='col1'>
                                     { coin.total_supply || 'insert value' }
                                 </td>
-                                <td id={coin.id}>
+                                <td id={coin.id} className='col2'>
                                     { coin.market_cap || 'insert value' }
                                 </td>
-                                <td id={coin.id}>
+                                <td id={coin.id} className='currentPrice'>
                                     { coin.current_price || 'insert value' }
                                 </td>
                             </tr>

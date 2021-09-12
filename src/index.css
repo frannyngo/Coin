@@ -10,6 +10,12 @@ body {
   border-color: solid orange;
 }
 
+.last img {
+  float: left;
+  padding: 0;
+  margin-top: 8px;
+}
+
 .head h3 {
   font-size: x-large;
 }
@@ -144,8 +150,9 @@ select {
 }
 
 .logo {
+  float: left;
   height: 15px;
-  padding-top: 5px;
+  padding-right: 10px;
 }
 
 .formButton button {
@@ -166,35 +173,202 @@ select {
   margin-top: 10px;
 }
 
+
+.faveButtons img {
+  height: 20px;
+  width: 20px;
+  filter: brightness(0) invert(1);
+}
+
+
+
+.faveButtons:hover img{
+  opacity: 0;
+}
+
 .faveButtons {
   background: orange;
   border: 1px solid white;
   color: white;
   padding: 18px;
-  width: 125px;
+  width: 160px;
   margin-top: 10px;
   margin-bottom: 30px;
   font-weight: bold;
   text-transform: uppercase;
   font-size: 12px;
   margin-right: 10px;
+  transition: 0.3s;
 }
 
 .faveButtons:hover {
-  background: rgba(0, 0, 0, 0.349);
-  border: 0;
-  color: white;
-  padding: 18px;
-  width: 125px;
-  margin-top: 10px;
-  margin-bottom: 30px;
-  font-weight: bold;
-  text-transform: uppercase;
-  font-size: 12px;
-  margin-right: 10px;
-  content: 'REMOVE';
+  font-size: 0;
+  background: rgba(10, 10, 10, 0.123);
+  border: 1px solid transparent;
+}
+
+
+.faveButtons:hover:after {
+  content: attr(data-hover);
+  font-size: 23px;
+  border: 1px solid transparent;
 }
 
 table:hover {
   cursor: pointer;
+}
+
+@media (max-width: 1000px) {
+  .faveButtons {
+    background: orange;
+    border: 1px solid white;
+    color: white;
+    padding: 10px;
+    width: 130px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 12px;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 840px) {
+  .faveButtons {
+    background: orange;
+    border: 1px solid white;
+    color: white;
+    padding: 5px;
+    width: 100px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 700px) {
+  .faveButtons {
+    background: orange;
+    border: 1px solid white;
+    color: white;
+    padding: 5px;
+    width: 75px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+}
+
+@media (max-width: 375px) {
+
+  body {
+    margin: 0;
+    padding: 0;
+  }
+
+  .head { 
+    background: orange;
+    padding: 20px;
+    width: 500px;
+    color: white;
+    border-color: solid orange;
+  }
+  
+  .faveButtons {
+    background: orange;
+    border: 1px solid white;
+    color: white;
+    padding: 3px;
+    width: 60px;
+    margin-top: 10px;
+    margin-bottom: 30px;
+    font-weight: bold;
+    text-transform: uppercase;
+    font-size: 10px;
+    margin-right: 10px;
+    transition: 0.3s;
+  }
+
+
+  .faveButtons img {
+    height: 15px;
+    width: 15px;
+    filter: brightness(0) invert(1);
+  }
+
+  .coinTable .topOfTable {
+    padding-top: 20px;
+  }
+  
+  .coinTable .bottomOfTable {
+    padding-top: 50px;
+  }
+  
+  table {
+    border-collapse: collapse;
+    border: 2px solid rgb(240, 237, 237);
+    width: 100%;
+    height: 100%;
+  }
+  
+  tr {
+    border-bottom: 2px solid rgb(240, 237, 237);
+  }
+  
+  th {
+    padding: 10px;
+    text-align: left;
+    text-transform: uppercase;
+    font-size: small;
+  }
+  
+  td {
+    padding: 10px;
+    font-size: small;
+    text-transform: uppercase;
+  }
+
+  .currentPrice {
+    text-align: center;
+  }
+
+  .col1 {
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;  
+  }
+
+  .col2 {
+    display:none;
+    width:0;
+    height:0;
+    opacity:0;
+    visibility: collapse;  
+  }
+ /* ------------------------------>  */
+
+ .show {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin-bottom: 80px;
+  margin-top: 18px;
+  width: 100%;
+  height: 100%;
+}
+
+
 }

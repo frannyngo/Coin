@@ -8,7 +8,7 @@ import XRP from './img/XRP.png';
 
 const Favourites = ({ favourite, setFavourite }) => {
     
-    const imageReference = { 'Bitcoin': Bitcoin, 'Bitcoin Cash': BitcoinCash, 'Ethereum': Ethereum, 'XRP': XRP, 'Litecoin': Litecoin }
+    const imageReference = { 'btc': Bitcoin, 'bch': BitcoinCash, 'eth': Ethereum, 'xrp': XRP, 'ltc': Litecoin }
 
     const Remove = (f) => {
 
@@ -25,7 +25,7 @@ console.log(favourite)
             <h3>
                 Favourite Coins
             </h3>
-
+            <div className='last'>
                 { favourite.length === 0? 
                     <small>
                         No Favourite Coins Added Yet
@@ -35,19 +35,19 @@ console.log(favourite)
                 favourite.map((f) => {
                     return (
                         <button className='faveButtons' 
-                            data-text='REMOVE' 
+                            data-hover='REMOVE' 
                             key={f} id={f} 
                             onClick={() => Remove(f)}
                                 >
                             <img src={imageReference[f]} 
                                 alt='hi' 
                                 className='logo'
-                                /> 
-                                { f }
+                                /> <p> { f } </p>
                         </button>
                     )
                 })
             }
+            </div>
         </div>
     );
 }

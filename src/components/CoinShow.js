@@ -50,11 +50,11 @@ const CoinShow = ({ favourite, setFavourite, image, symbol,  koins, name, price,
         e.preventDefault();
 
         const duplicate = favourite.find((fave) => {
-            if (fave === name) return true 
+            if (fave === symbol) return true 
         });
 
         if (!duplicate) {
-            setFavourite([...favourite, name])
+            setFavourite([...favourite, symbol])
         };
     };
 
