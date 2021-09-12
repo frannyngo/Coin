@@ -20,19 +20,20 @@ const Coins = ({ koins, setFavourite, favourite }) => {
                 ALL COINS
             </h4>
         </div>
+    <div className='tableContainer'>
         <table>
             <thead>
                 <tr>
                     <th>
                         Name
                     </th>
-                    <th className='col1'>
+                    <th className='col1' id='tableData'>
                         Total Supply
                     </th>
-                    <th className='col2'>
+                    <th className='col2' id='tableData'>
                         Market Cap
                     </th>
-                    <th>
+                    <th id='tableData'>
                         Current Price
                     </th>
                 </tr>
@@ -44,13 +45,13 @@ const Coins = ({ koins, setFavourite, favourite }) => {
                                 <td id={coin.id}>
                                     {coin.id}
                                 </td>
-                                <td id={coin.id} className='col1'>
+                                <td id={coin.id} className='col1' id='tableData'>
                                     { coin.total_supply || 'insert value' }
                                 </td>
-                                <td id={coin.id} className='col2'>
+                                <td id={coin.id} className='col2' id='tableData'>
                                     { coin.market_cap || 'insert value' }
                                 </td>
-                                <td id={coin.id} className='currentPrice'>
+                                <td id={coin.id} className='currentPrice' id='tableData'>
                                     { coin.current_price || 'insert value' }
                                 </td>
                             </tr>
@@ -59,6 +60,7 @@ const Coins = ({ koins, setFavourite, favourite }) => {
                     }
             </tbody>
         </table>
+    </div>
         { selected.length === 0 ?
             <div className='bottomOfTable'>
                 <p>

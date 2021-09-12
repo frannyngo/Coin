@@ -27,6 +27,20 @@ body {
   align-items: center;
 }
 
+.tableContainer {
+  padding: 20px;
+  border: 2px solid rgb(240, 237, 237);
+}
+
+#tableData {
+  text-align: end;
+  margin-right: 2px;
+}
+
+table tr:last-of-type {
+  border: 0;
+}
+
 .coinTable .topOfTable {
   padding-top: 20px;
 }
@@ -38,7 +52,6 @@ body {
 
 table {
   border-collapse: collapse;
-  border: 2px solid rgb(240, 237, 237);
   width: 500px;
 }
 
@@ -345,7 +358,7 @@ table:hover {
     width: 100%;
     height: 100%;
   }
-  
+
   tr {
     border-bottom: 2px solid rgb(240, 237, 237);
   }
